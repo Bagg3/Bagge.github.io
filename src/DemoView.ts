@@ -1,5 +1,5 @@
 import DemoGame from "./DemoGame";
-import FetchData from "./FetchData";
+import FetchData from "./DemoFetchData";
 
 const gameData = DemoGame();
 const data = FetchData(gameData);
