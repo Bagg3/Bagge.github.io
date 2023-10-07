@@ -12,3 +12,13 @@ function DemoGame() {
 }
 
 export default DemoGame;
+
+interface Demogame {
+  horse_id: string;
+  points: string;
+  color: string;
+  game_round: string;
+  game_id: string;
+}
+
+export type { Demogame };

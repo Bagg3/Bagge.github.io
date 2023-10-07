@@ -1,10 +1,20 @@
-import DemoGame from "./DemoGame";
+import DemoGame, { Demogame } from "./DemoGame";
 
-function FetchData(getDataFrom: any) {
-  if (getDataFrom === DemoGame) return getDataFrom;
+interface data_host {
+  host: string;
+  API: boolean;
+  // Game is optional
+  game: Demogame | undefined;
+}
 
-  const data = fetch("https://api.example.com/game");
-  return data;
+function FetchData(getDataFrom: data_host) {
+  if (getDataFrom.API) {
+    const data = fetch("https://api.example.com/game");
+    return data;
+  } else {
+    const data = DemoGame();
+    return data;
+  }
 }
 
 export default FetchData;

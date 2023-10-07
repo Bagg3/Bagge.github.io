@@ -1,8 +1,8 @@
-import DemoGame from "./DemoGame";
+import DemoGame, { Demogame } from "./DemoGame";
 import FetchData from "./DemoFetchData";
 
 const gameData = DemoGame();
-const data = FetchData(gameData);
+const data = FetchData({ host: "", API: false, game: undefined });
 
 updateGame(data);
 
