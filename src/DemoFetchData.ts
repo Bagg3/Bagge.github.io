@@ -1,4 +1,4 @@
-import DemoGame, { Demogame } from "./DemoGame";
+import { Demogame, DemoGame } from "./DemoGame";
 
 interface data_host {
   host: string;
