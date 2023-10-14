@@ -1,3 +1,6 @@
+import React from "react";
+import FrontPage from "./components/FrontPage";
+
 function App() {
   // custom api hook
 
@@ -7,8 +10,10 @@ function App() {
 
   return (
     <>
-      <div className="w-full h-screen flex justify-center items-center bg-slate-600">
-        <h1 className="text-3xl text-white">PRJ3</h1>
+      <div className="w-full h-screen flex justify-center bg-slate-600">
+        <div className="FrontPage">
+          <FrontPage />
+        </div>
       </div>
     </>
   );
