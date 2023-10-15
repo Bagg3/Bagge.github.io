@@ -1,26 +1,27 @@
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import FrontPage from "./components/FrontPage";
 import SetupGame from "./components/SetupGame";
 
 function App() {
-  // custom api hook
+  // custom API hook
 
-  //useEffect
+  // useEffect
 
-  //if(isloading) return <div>loading...</div>;
+  // if (isLoading) return <div>loading...</div>;
 
   return (
-    <>
-      <div className="w-full h-screen flex justify-center bg-slate-600">
-        <div className="FrontPage">
-          <FrontPage />
-        </div>
-        <div className="SetupGame">
-          <SetupGame />
-        </div>
-      </div>
-    </>
+    <div className="bg-slate-600">
+      <FrontPage />
+    </div>
   );
 }
 
 export default App;
+
+<Router>
+  <div className="w-full h-screen flex justify-center bg-slate-600">
+    <Route path="/" element={<FrontPage />} />
+    <Route path="/setup" element={<SetupGame />} />
+  </div>
+</Router>;
