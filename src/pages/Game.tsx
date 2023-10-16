@@ -1,18 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Game: React.FC = () => {
   return (
     <>
-      <div className="w-full h-screen flex flex-col justify-center items-center bg-slate-600">
-        <Link to="/" className="absolute top-3 left-3">
-          <button className="bg-slate-400 text-white text-lg font-bold rounded-full shadow-lg px-3 hover:bg-slate-300 active:bg-slate-200">
+      <div className="flex h-screen w-full flex-col items-center justify-center bg-slate-600">
+        <Link to="/" className="absolute left-3 top-3">
+          <button className="rounded-full bg-slate-400 px-3 text-lg font-bold text-white shadow-lg hover:bg-slate-300 active:bg-slate-200">
             Tilbage
           </button>
         </Link>
-        <h1 className="text-4xl mb-5 font-bold text-white">Hestevæddeløbet</h1>
-        <div className="w-[50%] h-[60%] bg-slate-400 rounded-lg flex flex-col mb-5 shadow-lg"></div>
-        <div className="bg-slate-400 text-white text-lg font-bold rounded-full shadow-lg px-4">
+        <h1 className="mb-5 text-4xl font-bold text-white">Hestevæddeløbet</h1>
+        <div className="mb-5 flex h-[60%] w-[50%] flex-col rounded-lg bg-slate-400 shadow-lg"></div>
+        <div className="rounded-full bg-slate-400 px-4 text-lg font-bold text-white shadow-lg">
           Hest nr 2 rykker frem
         </div>
       </div>
