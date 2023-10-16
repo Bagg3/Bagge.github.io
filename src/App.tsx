@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import FrontPage from "./components/FrontPage";
-import SetupGame from "./components/SetupGame";
+import FrontPage from "./pages/FrontPage";
+import SetupGame from "./pages/SetupGame";
+import Game from "./pages/Game";
 
 function App() {
   // custom API hook
@@ -15,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<FrontPage />} />
         <Route path="/setup" element={<SetupGame />} />
+        <Route path="/game" element={<Game />} />
       </Routes>
     </Router>
   );
