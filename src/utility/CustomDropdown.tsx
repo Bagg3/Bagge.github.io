@@ -6,16 +6,15 @@ interface Option {
   colorClass: string;
 }
 
-function CustomDropdown() {
+type DropDownProps = {
+  menuItems: Option[];
+};
+
+function CustomDropdown({ menuItems }: DropDownProps) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Option | null>(null); // Initialize as null
 
-  const options = [
-    { value: 'option1', label: 'Hest 1', colorClass: 'bg-red-500' },
-    { value: 'option2', label: 'Hest 2', colorClass: 'bg-green-500' },
-    { value: 'option3', label: 'Hest 3', colorClass: 'bg-blue-500' },
-    { value: 'option4', label: 'Hest 4', colorClass: 'bg-yellow-400' },
-  ];
+  const options = menuItems;
 
   // On option click, set selected option and close dropdown
   const handleOptionClick = (option: Option) => {
