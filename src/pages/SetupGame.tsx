@@ -44,10 +44,20 @@ const SetupGame = () => {
         >
           +
         </button>
+        <button>
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/2040/2040504.png"
+            className="absolute right-3 top-3 flex h-16 w-16 rounded-full"
+          />
+        </button>
+
         {players.map((player, index) => (
-          <div className="relative left-16 flex flex-row gap-10" key={index}>
+          <div
+            className="relative bottom-8 left-16 flex flex-row gap-10"
+            key={index}
+          >
             <input
-              className="top-0 mb-1 flex h-16 w-2/5 rounded-xl bg-slate-200 px-5 text-left text-lg font-bold text-black"
+              className="mb-1 flex h-16 w-2/5 rounded-xl bg-slate-200 px-5 text-left text-lg font-bold text-black"
               placeholder="Navn"
               value={player.name}
               onChange={e => handlePlayerNameChange(index, e.target.value)}
@@ -61,11 +71,13 @@ const SetupGame = () => {
 
             <CustomDropdown />
 
-            <button
-              onClick={() => deletePlayer(index)}
-              className="relative left-2 top-0 mb-2 h-16 w-16 rounded-full bg-slate-200 text-2xl font-bold text-slate-700 shadow-lg hover:bg-slate-300 active:bg-slate-200"
-            >
-              X
+            <button>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png"
+                alt="delete"
+                onClick={() => deletePlayer(index)}
+                className="relative left-2 top-0 mb-2 h-16 w-16 rounded-full text-2xl font-bold text-red-600  hover:bg-slate-300 active:bg-slate-200"
+              />
             </button>
           </div>
         ))}
