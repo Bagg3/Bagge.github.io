@@ -35,7 +35,7 @@ function CustomDropdown() {
       </button>
 
       {isDropdownOpen && (
-        <ul className="absolute z-20 mt-1 w-24 rounded-full border border-t-0 bg-white py-1 text-black">
+        <ul className="absolute z-20 mt-1 w-28 border-t-0 py-1 text-black">
           {options.map(option => (
             <li
               key={option.value}
