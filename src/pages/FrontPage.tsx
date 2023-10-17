@@ -10,9 +10,9 @@ const FrontPage = () => {
         </button>
       </Link>
 
-      <Link to="/setup">
+      <Link to="/setupGPT">
         <button className="h-16 w-64 rounded-full bg-slate-400 text-2xl font-bold text-white shadow-lg hover:bg-gray-300 active:bg-slate-200">
-          Spil Online
+          Spil Online (TEST REACT CHATGPT)
         </button>
       </Link>
 
