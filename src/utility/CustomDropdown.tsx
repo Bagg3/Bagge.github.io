@@ -27,7 +27,7 @@ function CustomDropdown() {
     <div className="relative">
       <button
         onClick={() => setDropdownOpen(!isDropdownOpen)}
-        className={`relative top-14 mb-1 h-16 w-24 rounded-full text-lg font-bold text-black ${
+        className={`relative top-0 mb-1 h-16 w-24 rounded-full text-lg font-bold text-black ${
           selectedOption?.colorClass || 'bg-slate-200'
         }`} // Sets background color equal to selected option color
       >
