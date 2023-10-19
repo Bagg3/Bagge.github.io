@@ -29,9 +29,12 @@ const HorseTrack: React.FC<{ positionIndex: number; color: string }> = ({
         if (divs) {
           const positionsArray: Position[] = Array.from(divs).map(div => {
             const position = (div as HTMLElement).getBoundingClientRect();
+            // Calculate the center position
+            const centerX = position.left + position.width / 2;
+            const centerY = position.top + position.height / 2;
             return {
-              top: position.top,
-              left: position.left,
+              top: centerY,
+              left: centerX,
             };
           });
           setPositions(positionsArray);
@@ -109,7 +112,7 @@ const HorseTrack: React.FC<{ positionIndex: number; color: string }> = ({
       <div className="absolute left-1/2 top-1/2 h-2 w-[95%] translate-x-[-50%] translate-y-[-50%] transform bg-slate-500"></div>
       <div
         ref={movableRef}
-        className={`${handleColor()} absolute aspect-square w-10 cursor-pointer rounded-full`}
+        className={`${handleColor()} absolute aspect-square w-12 -translate-x-[50%] -translate-y-[50%] cursor-pointer rounded-full`}
         onClick={changePosition}
       ></div>
       <div className="flex w-full items-center justify-between gap-5">
