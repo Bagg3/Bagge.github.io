@@ -1,24 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const FrontPage = () => {
   return (
-    <div className="flex flex-col w-full h-screen justify-center items-center bg-slate-600">
-      <h1 className="text-6xl top-56 font-bold text-white mb-10">
-        Hestevæddeløbet
-      </h1>
+    <div className="flex h-screen w-full flex-col items-center justify-center bg-slate-600">
+      <h1 className="mb-14 text-6xl font-bold text-white">Hestevæddeløbet</h1>
       <Link to="/setup">
-        <button className="bg-slate-400 text-white text-2xl font-bold rounded-full w-64 h-16 mb-10 shadow-lg hover:bg-slate-300 active:bg-slate-200">
+        <button className="mb-10 h-16 w-64 rounded-full bg-slate-400 text-2xl font-bold text-white shadow-lg hover:bg-slate-300 active:bg-slate-200">
           Spil Offline
         </button>
       </Link>
 
       <Link to="/setup">
-        <button className="bg-slate-400 text-white text-2xl font-bold w-64 h-16 rounded-full shadow-lg hover:bg-gray-300 active:bg-slate-200">
+        <button className="h-16 w-64 rounded-full bg-slate-400 text-2xl font-bold text-white shadow-lg hover:bg-gray-300 active:bg-slate-200">
           Spil Online
         </button>
       </Link>
 
-      <button className="bg-slate-700 text-gray-500 text-2xl font-bold w-64 h-16 rounded-full mt-10">
+      <button className="mt-10 h-16 w-64 rounded-full bg-slate-700 text-2xl font-bold text-gray-500">
         Leaderboard
       </button>
     </div>
