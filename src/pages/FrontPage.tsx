@@ -20,9 +20,6 @@ const FrontPage = () => {
 
       <button className="bg-slate-700 text-gray-500 text-2xl font-bold w-64 h-16 rounded-full mt-10">
         Leaderboard
-        {
-          //<Link to="/game" className="text-white">}
-        }
       </button>
     </div>
   );
