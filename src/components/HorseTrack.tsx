@@ -1,4 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
+import HorseGraphicBlue from '../images/horse-graphic-blue.png';
+import HorseGraphicRed from '../images/horse-graphic-red.png';
+import HorseGraphicYellow from '../images/horse-graphic-yellow.png';
+import HorseGraphicGreen from '../images/horse-graphics-green.png';
 
 interface Position {
   top: number;
@@ -7,7 +11,7 @@ interface Position {
 
 // Component which represents a single position on the track
 const TrackPosition: React.FC = () => (
-  <div className="track-position aspect-square w-10 rounded-full bg-slate-500"></div>
+  <div className="track-position aspect-square w-8 rounded-full bg-[#be4b32]"></div>
 );
 
 const HorseTrack: React.FC<{ positionIndex: number; color: string }> = ({
@@ -18,7 +22,8 @@ const HorseTrack: React.FC<{ positionIndex: number; color: string }> = ({
   const [currentPositionIndex, setCurrentPositionIndex] = useState(0);
   const movableRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const numberOfPositions = 7;
+
+  const numberOfPositions = 5;
 
   // Handles the track positions
   useEffect(() => {
@@ -88,7 +93,7 @@ const HorseTrack: React.FC<{ positionIndex: number; color: string }> = ({
   };
 
   // Handles the color of the movable
-  const handleColor = (): string => {
+  const handleBackgroundColor = (): string => {
     if (movableRef.current) {
       switch (color) {
         case 'red':
@@ -104,17 +109,41 @@ const HorseTrack: React.FC<{ positionIndex: number; color: string }> = ({
     return 'bg-white';
   };
 
+  // Handles the horse graphic of the movable
+  const handleHorseGraphic = () => {
+    if (movableRef.current) {
+      switch (color) {
+        case 'red':
+          return HorseGraphicRed;
+        case 'blue':
+          return HorseGraphicBlue;
+        case 'green':
+          return HorseGraphicGreen;
+        case 'yellow':
+          return HorseGraphicYellow;
+      }
+    }
+    return 'bg-white';
+  };
+
   return (
     <div
       className="relative flex w-[80%] items-center justify-between"
       ref={containerRef}
     >
-      <div className="absolute left-1/2 top-1/2 h-2 w-[95%] translate-x-[-50%] translate-y-[-50%] transform bg-slate-500"></div>
+      <div className="absolute left-1/2 top-1/2 h-2 w-[95%] translate-x-[-50%] translate-y-[-50%] transform bg-[#be4b32]"></div>
       <div
         ref={movableRef}
-        className={`${handleColor()} absolute aspect-square w-12 -translate-x-[50%] -translate-y-[50%] cursor-pointer rounded-full`}
+        className={`${handleBackgroundColor()} absolute flex aspect-square w-14 -translate-x-[50%] -translate-y-[50%] cursor-pointer items-center justify-center rounded-full border border-white shadow-lg`}
         onClick={changePosition}
-      ></div>
+      >
+        <img
+          src={handleHorseGraphic()}
+          alt="Horse Graphic"
+          className=" translate-x-[10%] scale-[170%]"
+        />
+      </div>
+
       <div className="flex w-full items-center justify-between gap-5">
         {[...Array(numberOfPositions)].map((_, index) => (
           <TrackPosition key={index} />

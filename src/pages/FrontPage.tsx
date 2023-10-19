@@ -1,22 +1,28 @@
 import { Link } from 'react-router-dom';
+import CoverArt from '../images/cover-art.jpeg';
 
 const FrontPage = () => {
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center bg-slate-600">
-      <h1 className="mb-14 text-6xl font-bold text-white">Hestevæddeløbet</h1>
+    <div className="flex h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-[#C34629] via-[#C34629] to-[#225C70]">
+      <h1 className="text-6xl font-bold text-[#f3f3f3]">Hestevæddeløbet</h1>
+      <img
+        src={CoverArt}
+        className="my-7 aspect-square w-[20%] rounded-full bg-cover bg-center shadow-lg"
+        alt="Cover Art"
+      />
       <Link to="/setup">
-        <button className="mb-10 h-16 w-64 rounded-full bg-slate-400 text-2xl font-bold text-white shadow-lg hover:bg-slate-300 active:bg-slate-200">
+        <button className="mb-7 h-16 w-64 rounded-full bg-[#d65639] text-xl font-bold text-[#e4e4e4] shadow-lg hover:bg-[#da644a]">
           Spil Offline
         </button>
       </Link>
 
       <Link to="/setup">
-        <button className="h-16 w-64 rounded-full bg-slate-400 text-2xl font-bold text-white shadow-lg hover:bg-gray-300 active:bg-slate-200">
+        <button className="mb-7 h-16 w-64 rounded-full bg-[#d65639] text-xl font-bold text-[#e4e4e4] shadow-lg hover:bg-[#da644a]">
           Spil Online
         </button>
       </Link>
 
-      <button className="mt-10 h-16 w-64 rounded-full bg-slate-700 text-2xl font-bold text-gray-500">
+      <button className="h-16 w-64 rounded-full bg-[#d65639] text-xl font-bold text-[#e4e4e4]">
         Leaderboard
       </button>
     </div>
