@@ -45,7 +45,7 @@ const SetupGame = () => {
         </button>
       </Link>
       <h1 className="mb-5 text-4xl font-bold text-white">Setup Spil</h1>
-      <div className="mb-5 flex h-[60%] w-[50%] flex-col gap-8 rounded-lg bg-slate-400 shadow-lg">
+      <div className="mb-5 flex h-[60%] w-[50%] flex-col gap-8 overflow-y-auto overflow-x-hidden rounded-lg bg-[#d4584f] shadow-lg">
         <button
           onClick={addPlayer}
           className="relative left-2 top-2 mb-2 h-16 w-16 rounded-full bg-slate-200 text-2xl font-bold text-slate-700 shadow-lg hover:bg-slate-300 active:bg-slate-200"
