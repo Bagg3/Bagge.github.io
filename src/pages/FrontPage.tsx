@@ -16,9 +16,9 @@ const FrontPage = () => {
         </button>
       </Link>
 
-      <Link to="/setup">
+      <Link to="/setup2">
         <button className="mb-7 h-16 w-64 rounded-full bg-[#d65639] text-xl font-bold text-[#e4e4e4] shadow-lg hover:bg-[#da644a]">
-          Spil Online
+          Spil Online(2)
         </button>
       </Link>
 
