@@ -36,8 +36,10 @@ const SetupGame2 = () => {
   ];
   */
 
-  //const cardHeight = 'h-25'; // Height of the card in the setup game page - CHANGE THIS AND USE STYLE
-
+  //******************************************************************* */
+  // OBS OBS OBS Use a component for the input fields instead of this
+  // OBS OBS OBS Every component should be equal to a horse, the input fields and the add/delete buttons
+  //******************************************************************* */
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-[#C34629] via-[#C34629] to-[#225C70]">
       <Link to="/" className="absolute left-3 top-3">
@@ -47,7 +49,7 @@ const SetupGame2 = () => {
       </Link>
       <h1 className="mb-5 text-4xl font-bold text-white">Setup Spil 2</h1>
       <div className="mb-5 h-[65%] w-[65%] gap-2 overflow-y-auto overflow-x-hidden rounded-lg bg-[#d4584f]  shadow-lg">
-        <div className="grid  grid-cols-4 gap-4 overflow-y-auto overflow-x-hidden">
+        <div className="grid grid-cols-4 gap-4 overflow-y-auto overflow-x-hidden">
           <div className="mb-4 grid h-10 grid-flow-row rounded-full bg-red-600 text-center text-lg text-white">
             Hest 1
           </div>
@@ -61,39 +63,83 @@ const SetupGame2 = () => {
             Hest 4
           </div>
         </div>
-        <div className="flex flex-row gap-3">
-          <input
-            className="mb-1 h-16 w-3/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-left text-lg font-bold text-black"
-            placeholder="Navn"
-          ></input>
-          <input
-            className="mb-1 h-16 w-1/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-center text-lg font-bold text-black"
-            placeholder="Bet"
-          ></input>
-          <input
-            className="mb-1 h-16 w-3/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-left text-lg font-bold text-black"
-            placeholder="Navn"
-          ></input>
-          <input
-            className="mb-1 h-16 w-1/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-center text-lg font-bold text-black"
-            placeholder="Bet"
-          ></input>
-          <input
-            className="mb-1 h-16 w-3/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-left text-lg font-bold text-black"
-            placeholder="Navn"
-          ></input>
-          <input
-            className="mb-1 h-16 w-1/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-center text-lg font-bold text-black"
-            placeholder="Bet"
-          ></input>
-          <input
-            className="mb-1 h-16 w-3/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-left text-lg font-bold text-black"
-            placeholder="Navn"
-          ></input>
-          <input
-            className="mb-1 h-16 w-1/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-center text-lg font-bold text-black"
-            placeholder="Bet"
-          ></input>
+        {players.map((player, index) => (
+          <div className="flex flex-row gap-3" key={index}>
+            <input
+              className="mb-1 h-16 w-3/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-left text-lg font-bold text-black"
+              placeholder="Navn"
+              value={player.name}
+              onChange={e => handlePlayerNameChange(index, e.target.value)}
+            ></input>
+            <input
+              className="mb-1 h-16 w-1/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-center text-lg font-bold text-black"
+              placeholder="Bet"
+              value={player.quantity}
+              onChange={e => handlePlayerQuantityChange(index, e.target.value)}
+            ></input>
+            <input
+              className="mb-1 h-16 w-3/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-left text-lg font-bold text-black"
+              placeholder="Navn"
+              value={player.name}
+              onChange={e => handlePlayerNameChange(index, e.target.value)}
+            ></input>
+            <input
+              className="mb-1 h-16 w-1/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-center text-lg font-bold text-black"
+              placeholder="Bet"
+              value={player.quantity}
+              onChange={e => handlePlayerQuantityChange(index, e.target.value)}
+            ></input>
+            <input
+              className="mb-1 h-16 w-3/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-left text-lg font-bold text-black"
+              placeholder="Navn"
+              value={player.name}
+              onChange={e => handlePlayerNameChange(index, e.target.value)}
+            ></input>
+            <input
+              className="mb-1 h-16 w-1/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-center text-lg font-bold text-black"
+              placeholder="Bet"
+              value={player.quantity}
+              onChange={e => handlePlayerQuantityChange(index, e.target.value)}
+            ></input>
+            <input
+              className="mb-1 h-16 w-3/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-left text-lg font-bold text-black"
+              placeholder="Navn"
+              value={player.name}
+              onChange={e => handlePlayerNameChange(index, e.target.value)}
+            ></input>
+            <input
+              className="mb-1 h-16 w-1/5 grid-flow-row rounded-xl bg-slate-200 px-5 text-center text-lg font-bold text-black"
+              placeholder="Bet"
+              value={player.quantity}
+              onChange={e => handlePlayerQuantityChange(index, e.target.value)}
+            ></input>
+          </div>
+        ))}
+        <div className="grid grid-cols-4 justify-center gap-4 overflow-y-auto overflow-x-hidden">
+          <button
+            onClick={addPlayer}
+            className="relative left-2 top-2 mb-2 h-16 w-16 rounded-full bg-slate-200 text-2xl font-bold text-slate-700 shadow-lg hover:bg-slate-300 active:bg-slate-200"
+          >
+            +
+          </button>
+          <button
+            onClick={addPlayer}
+            className="relative left-2 top-2 mb-2 h-16 w-16 rounded-full bg-slate-200 text-2xl font-bold text-slate-700 shadow-lg hover:bg-slate-300 active:bg-slate-200"
+          >
+            +
+          </button>
+          <button
+            onClick={addPlayer}
+            className="relative left-2 top-2 mb-2 h-16 w-16 rounded-full bg-slate-200 text-2xl font-bold text-slate-700 shadow-lg hover:bg-slate-300 active:bg-slate-200"
+          >
+            +
+          </button>
+          <button
+            onClick={addPlayer}
+            className="relative left-2 top-2 mb-2 h-16 w-16 rounded-full bg-slate-200 text-2xl font-bold text-slate-700 shadow-lg hover:bg-slate-300 active:bg-slate-200"
+          >
+            +
+          </button>
         </div>
       </div>
       <Link to="/game">
