@@ -4,6 +4,7 @@ interface Option {
   value: string;
   label: string;
   colorClass: string;
+  icon?: string;
 }
 
 type DropDownProps = {
