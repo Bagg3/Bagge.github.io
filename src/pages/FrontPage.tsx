@@ -22,7 +22,7 @@ const FrontPage = () => {
         </button>
       </Link>
 
-      <button className="h-16 w-64 rounded-full bg-[#d65639] text-xl font-bold text-[#e4e4e4]">
+      <button className="{//Color is #d65639 when active} h-16 w-64 rounded-full bg-[#8b8b8b] text-xl font-bold text-[#e4e4e4]">
         Leaderboard
       </button>
     </div>
