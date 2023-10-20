@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import CustomDropdown from '../utility/CustomDropdown';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const SetupGame = () => {
   const [players, setPlayers] = useState([{ name: '', quantity: '' }]);
@@ -37,10 +38,10 @@ const SetupGame = () => {
   //const cardHeight = 'h-25'; // Height of the card in the setup game page - CHANGE THIS AND USE STYLE
 
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center bg-slate-600">
+    <div className="flex h-screen w-full flex-col items-center justify-center bg-gradient-to-b from-[#C34629] via-[#C34629] to-[#225C70]">
       <Link to="/" className="absolute left-3 top-3">
-        <button className="rounded-full bg-slate-400 px-3 py-1 text-lg font-bold text-white shadow-lg hover:bg-gray-300 active:bg-slate-200">
-          Tilbage
+        <button className="flex aspect-square w-12 items-center justify-center rounded-full bg-[#9a3925] text-lg font-bold text-white shadow-lg hover:bg-[#da644a]">
+          <ArrowBackIcon />
         </button>
       </Link>
       <h1 className="mb-5 text-4xl font-bold text-white">Setup Spil</h1>
@@ -83,14 +84,14 @@ const SetupGame = () => {
                 src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png"
                 alt="delete"
                 onClick={() => deletePlayer(index)}
-                className="relative left-2 top-0 mb-2 h-16 w-16 rounded-full text-2xl font-bold text-red-600  hover:bg-slate-300 active:bg-slate-200"
+                className="relative left-2 top-0 mb-2 h-16 w-16 rounded-full text-2xl font-bold hover:bg-slate-300 active:bg-slate-200"
               />
             </button>
           </div>
         ))}
       </div>
       <Link to="/game">
-        <button className="mb-5 h-16 w-64 rounded-full bg-slate-400 text-2xl font-bold text-white shadow-lg hover:bg-slate-300 active:bg-slate-200">
+        <button className="mb-5 h-16 w-64 rounded-full bg-[#d65639] text-2xl font-bold text-white shadow-lg hover:bg-[#da644a]">
           Start Spil
         </button>
       </Link>
