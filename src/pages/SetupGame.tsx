@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import CustomDropdown from '../utility/CustomDropdown';
+import CustomDropdown from '../components/CustomDropdown';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const SetupGame = () => {
