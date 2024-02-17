@@ -3,7 +3,7 @@ import { useState } from 'react';
 import CustomDropdown from '../components/CustomDropdown';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-const SetupGame = () => {
+const SetupPageI1 = () => {
   const [players, setPlayers] = useState([{ name: '', quantity: '' }]);
 
   const addPlayer = () => {
@@ -99,4 +99,4 @@ const SetupGame = () => {
   );
 };
 
-export default SetupGame;
+export default SetupPageI1;

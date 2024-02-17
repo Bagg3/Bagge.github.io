@@ -1,27 +1,39 @@
+import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import FrontPage from './pages/FrontPage';
-import SetupGame from './pages/SetupGame';
-import Game from './pages/Game';
-import SetupGame2 from './pages/SetupGame2';
+import Game from './pages/GamePage';
+import SetupPage from './pages/SetupPage';
+import WinningPage from './pages/WinningPage';
+import { PlayerDataProvider } from './components/PlayerDataContext';
 
 function App() {
-  // custom API hook
+	const [fetchFromAPI, setfetchFromAPI] = useState(false);
 
-  // useEffect
+	const updatefetchFromAPI = (value: boolean) => {
+		setfetchFromAPI(value);
+	};
 
-  // if (isLoading) return <div>loading...</div>;
-
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<FrontPage />} />
-        <Route path="/setup" element={<SetupGame />} />
-        <Route path="/setup2" element={<SetupGame2 />} />
-        <Route path="/game" element={<Game />} />
-        <Route path="/*" element={<div>404</div>} />
-      </Routes>
-    </Router>
-  );
+	return (
+		<PlayerDataProvider>
+			<Router>
+				<Routes>
+					<Route
+						path="/"
+						element={
+							<FrontPage setfetchFromAPI={updatefetchFromAPI} />
+						}
+					/>
+					<Route path="/setup" element={<SetupPage />} />
+					<Route
+						path="/game"
+						element={<Game fetchFromAPI={fetchFromAPI} />}
+					/>
+					<Route path="/winning" element={<WinningPage />} />
+					<Route path="/*" element={<div>404</div>} />
+				</Routes>
+			</Router>
+		</PlayerDataProvider>
+	);
 }
 
 export default App;
