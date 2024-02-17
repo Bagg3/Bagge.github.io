@@ -54,7 +54,7 @@ const SetupPage: React.FC = () => {
 			</Link>
 			<h1 className="mb-5 text-4xl font-bold text-white">Setup Spil</h1>
 
-			<div className="mb-5 grid h-[70%] w-[88%] grid-cols-4 flex-row gap-2 overflow-y-scroll rounded-[25px] bg-[#be4b32] p-4 shadow-lg scrollbar-thin">
+			<div className="scrollbar-hide mb-5 grid h-[70%] w-[88%] grid-cols-4 flex-row gap-2 overflow-y-scroll rounded-[25px] bg-[#be4b32] p-4 shadow-lg">
 				{inputs.map((input, index) => (
 					<div
 						key={index}
