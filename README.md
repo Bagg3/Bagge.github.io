@@ -1,7 +1,9 @@
 # Hestevæddeløbet
 
 This is a horse racing game built for Semester Projekt 3.
+
 This project is the frontend part of the project.
+
 Build together with @MarkBogelund
 
 The project is build with React and TypeScript.
