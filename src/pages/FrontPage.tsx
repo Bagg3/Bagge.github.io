@@ -13,9 +13,11 @@ const FrontPage: React.FC<FrontPageProps> = ({ setfetchFromAPI }) => {
 		clearPlayers();
 	}, []);
 
+	/*
 	const handleClickBoard = () => {
 		setfetchFromAPI(true);
 	};
+	*/
 
 	const handleClickVirtual = () => {
 		setfetchFromAPI(false);
@@ -30,6 +32,7 @@ const FrontPage: React.FC<FrontPageProps> = ({ setfetchFromAPI }) => {
 				className="my-7 aspect-square w-[20%] rounded-full bg-cover bg-center shadow-lg"
 				alt="Cover Art"
 			/>
+			{/* 
 			<Link to="/setup" state={{ fetchFromAPI: true }}>
 				<button
 					onClick={handleClickBoard}
@@ -38,13 +41,14 @@ const FrontPage: React.FC<FrontPageProps> = ({ setfetchFromAPI }) => {
 					Spil med board
 				</button>
 			</Link>
+			*/}
 
 			<Link to="/setup" state={{ fetchFromAPI: false }}>
 				<button
 					onClick={handleClickVirtual}
 					className="mb-7 h-20 w-64 rounded-full bg-[#d65639] text-xl font-bold text-[#e4e4e4] shadow-lg hover:bg-[#da644a]"
 				>
-					Spil virtuelt
+					Spil
 				</button>
 			</Link>
 

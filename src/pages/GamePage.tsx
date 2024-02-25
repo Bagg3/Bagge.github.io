@@ -118,6 +118,9 @@ const GamePage: React.FC<{ fetchFromAPI: boolean }> = ({ fetchFromAPI }) => {
 		setHasWon(true);
 	}, [winningHorses, hasWon]);
 
+	// Always set Fetch from API to be false
+	fetchFromAPI = false;
+
 	// Fetch game data from backend periodically with a second interval
 	useEffect(() => {
 		if (fetchFromAPI) {
