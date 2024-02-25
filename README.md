@@ -1,6 +1,6 @@
 # Hestevæddeløbet
 
-This is a horse racing game built for Semester Projekt 3.
+This is a horse racing game built for Semester Project 3.
 
 This project is the frontend part of the project.
 
