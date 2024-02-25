@@ -15,6 +15,7 @@ import { resetGame } from '../utility/generateGameVirtual';
 import { usePlayerData } from '../components/PlayerDataContext';
 import stepBackIndicator from '../utility/stepBack';
 import { StepIndicator, resetStepBackArray } from '../utility/stepBack';
+import StepBackArrayComponent from '../components/StepBackIndicator';
 
 const GamePage: React.FC<{ fetchFromAPI: boolean }> = ({ fetchFromAPI }) => {
 	const [game, setGame] = useState<Game>({
@@ -36,14 +37,16 @@ const GamePage: React.FC<{ fetchFromAPI: boolean }> = ({ fetchFromAPI }) => {
 	}, [game]);
 
 	const [stepBackArray, setStepBackArray] = useState<number[]>([
+		StepIndicator.NoIndicator,
 		StepIndicator.SleepingState,
 		StepIndicator.SleepingState,
 		StepIndicator.SleepingState,
 		StepIndicator.SleepingState,
 		StepIndicator.SleepingState,
 		StepIndicator.SleepingState,
+		StepIndicator.NoIndicator,
 	]);
-	stepBackIndicator(game, stepBackArray, setStepBackArray);
+	stepBackIndicator(game, stepBackArray, setStepBackArray, game.game_round);
 
 	const [stepClicked, setStepClicked] = useState(false);
 	const [resetClicked, setResetClicked] = useState(false);
@@ -142,6 +145,13 @@ const GamePage: React.FC<{ fetchFromAPI: boolean }> = ({ fetchFromAPI }) => {
 					setStepClicked(false);
 				}
 			});
+			// Update the stepBackArray when stepClicked is true
+			stepBackIndicator(
+				game,
+				stepBackArray,
+				setStepBackArray,
+				game.game_round
+			);
 		}
 	}, [fetchFromAPI, stepClicked, game.game_round]);
 
@@ -161,7 +171,6 @@ const GamePage: React.FC<{ fetchFromAPI: boolean }> = ({ fetchFromAPI }) => {
 			resetStepBackArray(stepBackArray);
 			setWinningHorses([]);
 			setWinningHorse(undefined);
-
 			setResetClicked(false);
 		}
 	}, [resetClicked]);
@@ -190,6 +199,7 @@ const GamePage: React.FC<{ fetchFromAPI: boolean }> = ({ fetchFromAPI }) => {
 				</Link>
 				<div className="mb-5 flex h-[70%] w-[65%] flex-col items-center justify-center gap-14 rounded-lg bg-[#d65639] shadow-lg">
 					<div className="absolute h-[55%] w-[55%] rounded-lg bg-[#ffffff54] shadow-lg"></div>
+					<StepBackArrayComponent stepBackArray={stepBackArray} />
 					<HorseTrack
 						positionIndex={horsePositionsArray[0]}
 						color="red"
