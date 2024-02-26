@@ -11,7 +11,7 @@ const StepBackArrayComponent: React.FC<StepBackArrayProps> = ({
 	const getColor = (value: number) => {
 		switch (value) {
 			case StepIndicator.NoIndicator:
-				return 'bg-[#d65639]';
+				return 'bg-[#E38E7A]';
 			case StepIndicator.SleepingState:
 				return 'bg-red-600';
 			case StepIndicator.ActiveState:
@@ -24,7 +24,7 @@ const StepBackArrayComponent: React.FC<StepBackArrayProps> = ({
 	};
 
 	return (
-		<div className="flex w-[80%] justify-between">
+		<div className="z-10 flex w-[80%] justify-between ">
 			{stepBackArray.map((value, index) => (
 				<div
 					key={index}
