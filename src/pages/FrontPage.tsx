@@ -46,7 +46,7 @@ const FrontPage: React.FC<FrontPageProps> = ({ setfetchFromAPI }) => {
 			<Link to="/setup" state={{ fetchFromAPI: false }}>
 				<button
 					onClick={handleClickVirtual}
-					className="my-16 h-20 w-64 rounded-full bg-[#d65639] text-xl font-bold text-[#e4e4e4] shadow-lg hover:bg-[#da644a]"
+					className="my-12 h-20 w-64 rounded-full bg-[#d65639] text-xl font-bold text-[#e4e4e4] shadow-lg hover:bg-[#da644a]"
 				>
 					Start spillet
 				</button>
