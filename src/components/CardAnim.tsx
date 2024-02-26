@@ -33,7 +33,7 @@ function CardAnim({
 	});
 
 	return (
-		<div className="absolute flex h-screen items-center justify-center">
+		<div className="absolute flex h-screen items-center justify-center opacity-75">
 			<animated.div
 				style={{
 					transform: springs.rotate.to(
@@ -43,7 +43,7 @@ function CardAnim({
 				}}
 				className="absolute flex aspect-square w-64 items-center justify-center rounded-lg bg-white shadow-lg"
 			>
-				<div className="flex items-center justify-center text-center">
+				<div className="flex items-center justify-center text-center opacity-100">
 					{game.movement?.horse_id !== 0 ? (
 						!winningHorse ? (
 							<h1 className="text-xl font-bold text-[#C34629]">
